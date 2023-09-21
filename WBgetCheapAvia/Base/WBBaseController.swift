@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseController: UIViewController {
+class WBBaseController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ class BaseController: UIViewController {
 }
 
 
-@objc extension BaseController {
+@objc extension WBBaseController {
     
     func addViews() {}
     func constraintViews() {}

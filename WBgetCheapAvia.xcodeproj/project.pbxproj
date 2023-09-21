@@ -19,10 +19,13 @@
 		835260E22ABA238400F8F569 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835260DF2ABA238400F8F569 /* UIColor + ext.swift */; };
 		835260E32ABA238400F8F569 /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835260E02ABA238400F8F569 /* UIView + ext.swift */; };
 		835260E52ABA23AC00F8F569 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835260E42ABA23AC00F8F569 /* Resources.swift */; };
-		835260F32ABA260800F8F569 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835260E82ABA260800F8F569 /* BaseController.swift */; };
+		835260F32ABA260800F8F569 /* WBBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835260E82ABA260800F8F569 /* WBBaseController.swift */; };
 		835260F52ABA260800F8F569 /* WBBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835260EB2ABA260800F8F569 /* WBBaseView.swift */; };
 		835260FC2ABA2AD900F8F569 /* Date + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835260FB2ABA2AD900F8F569 /* Date + ext.swift */; };
 		835260FE2ABA305800F8F569 /* CityDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835260FD2ABA305800F8F569 /* CityDateView.swift */; };
+		8754FC882ABB00CC00FDCFD3 /* WBBaseDetailFlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8754FC872ABB00CC00FDCFD3 /* WBBaseDetailFlightView.swift */; };
+		87728D352ABAD59200349531 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87728D342ABAD59200349531 /* MainViewModel.swift */; };
+		87728D372ABADF2800349531 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87728D362ABADF2800349531 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,10 +43,13 @@
 		835260DF2ABA238400F8F569 /* UIColor + ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		835260E02ABA238400F8F569 /* UIView + ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
 		835260E42ABA23AC00F8F569 /* Resources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
-		835260E82ABA260800F8F569 /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		835260E82ABA260800F8F569 /* WBBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBaseController.swift; sourceTree = "<group>"; };
 		835260EB2ABA260800F8F569 /* WBBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBaseView.swift; sourceTree = "<group>"; };
 		835260FB2ABA2AD900F8F569 /* Date + ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date + ext.swift"; sourceTree = "<group>"; };
 		835260FD2ABA305800F8F569 /* CityDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDateView.swift; sourceTree = "<group>"; };
+		8754FC872ABB00CC00FDCFD3 /* WBBaseDetailFlightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBBaseDetailFlightView.swift; sourceTree = "<group>"; };
+		87728D342ABAD59200349531 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		87728D362ABADF2800349531 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,9 +104,8 @@
 		835260D42ABA1AB000F8F569 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				835260DA2ABA230E00F8F569 /* Views */,
-				835260A82AB8AE7000F8F569 /* MainViewController.swift */,
-				835260D22ABA191300F8F569 /* DetailViewController.swift */,
+				87728D322ABAC8DD00349531 /* Main */,
+				87728D332ABAC8EA00349531 /* Detail */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -162,7 +167,9 @@
 		835260E72ABA260800F8F569 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				835260E82ABA260800F8F569 /* BaseController.swift */,
+				835260EB2ABA260800F8F569 /* WBBaseView.swift */,
+				835260E82ABA260800F8F569 /* WBBaseController.swift */,
+				8754FC872ABB00CC00FDCFD3 /* WBBaseDetailFlightView.swift */,
 				835260EA2ABA260800F8F569 /* Views */,
 			);
 			path = Base;
@@ -171,10 +178,28 @@
 		835260EA2ABA260800F8F569 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				835260EB2ABA260800F8F569 /* WBBaseView.swift */,
 				835260FD2ABA305800F8F569 /* CityDateView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		87728D322ABAC8DD00349531 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				87728D342ABAD59200349531 /* MainViewModel.swift */,
+				835260A82AB8AE7000F8F569 /* MainViewController.swift */,
+				835260DA2ABA230E00F8F569 /* Views */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		87728D332ABAC8EA00349531 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				87728D362ABADF2800349531 /* DetailViewModel.swift */,
+				835260D22ABA191300F8F569 /* DetailViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,10 +273,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				835260DC2ABA233B00F8F569 /* FlightTableViewCell.swift in Sources */,
+				8754FC882ABB00CC00FDCFD3 /* WBBaseDetailFlightView.swift in Sources */,
 				835260A92AB8AE7000F8F569 /* MainViewController.swift in Sources */,
 				835260A52AB8AE7000F8F569 /* AppDelegate.swift in Sources */,
 				835260FC2ABA2AD900F8F569 /* Date + ext.swift in Sources */,
 				835260E52ABA23AC00F8F569 /* Resources.swift in Sources */,
+				87728D352ABAD59200349531 /* MainViewModel.swift in Sources */,
 				835260FE2ABA305800F8F569 /* CityDateView.swift in Sources */,
 				835260D32ABA191300F8F569 /* DetailViewController.swift in Sources */,
 				835260F52ABA260800F8F569 /* WBBaseView.swift in Sources */,
@@ -259,8 +286,9 @@
 				835260BA2AB8AEE000F8F569 /* WBService.swift in Sources */,
 				835260E22ABA238400F8F569 /* UIColor + ext.swift in Sources */,
 				835260A72AB8AE7000F8F569 /* SceneDelegate.swift in Sources */,
-				835260F32ABA260800F8F569 /* BaseController.swift in Sources */,
+				835260F32ABA260800F8F569 /* WBBaseController.swift in Sources */,
 				835260D92ABA205B00F8F569 /* Flights.swift in Sources */,
+				87728D372ABADF2800349531 /* DetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,18 +19,19 @@ class FlightTableViewCell: UITableViewCell {
         return label
     }()
     
-    private var likeButton: UIButton = {
-        let button = UIButton()
-        button.setImage(R.Images.FlightTableViewCell.unliked, for: .normal)
-        return button
+    private var likeImageView: UIImageView = {
+        let view = UIImageView()
+        view.contentMode = .scaleAspectFit
+//        view.image = R.Images.FlightTableViewCell.unliked
+        return view
     }()
     
     private let spacer = UIView()
     
     private lazy var priceStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [priceLabel, spacer, likeButton])
+        let stackView = UIStackView(arrangedSubviews: [priceLabel, spacer, likeImageView])
         stackView.spacing = 5
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fill
         return stackView
     }()
     
@@ -47,7 +48,8 @@ class FlightTableViewCell: UITableViewCell {
     private lazy var destinstionStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [departureView, arrowImageView, arrivalView])
         stackView.spacing = 5
-        stackView.distribution = .fillProportionally
+        stackView.alignment = .center
+        stackView.distribution = .equalSpacing
         return stackView
     }()
     
@@ -66,9 +68,13 @@ class FlightTableViewCell: UITableViewCell {
     }
 
     func update(with flight: Flight) {
-        priceLabel.text = "\(flight.price)"
+        priceLabel.text = "\(flight.price) р."
         departureView.configure(city: flight.startCity.rawValue, date: flight.startDate)
         arrivalView.configure(city: flight.endCity, date: flight.endDate.rawValue)
+    }
+    
+    func configurelikeImageView(_ image: UIImage) {
+        likeImageView.image = image
     }
     
     override func prepareForReuse() {
@@ -76,7 +82,7 @@ class FlightTableViewCell: UITableViewCell {
     }
     
     private func setupViews() {
-        makeSystem(likeButton)
+      
     }
     
     private func setupHierarchy() {

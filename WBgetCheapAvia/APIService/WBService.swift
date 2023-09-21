@@ -8,12 +8,10 @@
 import Foundation
 
 final class WBService {
-    
-    var flights = [Flight]()
-   
+
     static let instance = WBService()
     
-    func getCheapFlights(completion: @escaping () -> Void) {
+    func getCheapFlights(completion: @escaping (Result<Flights, Error>) -> Void) {
         guard let url = URL(string: "https://vmeste.wildberries.ru/stream/api/avia-service/v1/suggests/getCheap") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -43,9 +41,9 @@ final class WBService {
             
             do {
                 let result = try JSONDecoder().decode(Flights.self, from: data)
-                self.flights = result.flights
-                completion()
+                completion(.success(result))
             } catch {
+                completion(.failure(error))
                 print("Error parsing JSON: \(error)")
             }
         }

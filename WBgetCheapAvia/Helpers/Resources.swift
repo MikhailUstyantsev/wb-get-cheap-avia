@@ -57,4 +57,9 @@ enum R {
     }
     
     
+    enum Keys {
+        static let defaults = "favorites"
+    }
+    
+    
 }
